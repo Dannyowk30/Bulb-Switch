@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <div style="display: flex; justify-content: space-between;">
+      <div>
+         <!-- only one button -->
+         <div>
+            <img src="image/pic_bulboff.png" id="pic">
+            <input onclick="power()" type="button" value="Power">
+         </div>
+         <script>
+            const img = document.getElementById("pic");
+            const bulbOn = "image/pic_bulbon.png";
+            const bulbOff = "image/pic_bulboff.png";
+            let imageList = [bulbOn, bulbOff]
+            let index = 0;
+            function power(){
+               index+=1;
+               if(index==imageList.length){
+                  index = 0;
+               };
+               img.src = imageList[index];
+            }
+         </script>
+      </div>
+      <div>
+         <!-- using different button -->
+         <div>
+            <input onclick="turnOn()" type="button" value="Turn on">
+            <img src="image/pic_bulboff.png" id="hello">
+            <input onclick="turnOff()" type="button" value="Turn off">
+         </div>
+         <script>
+            const light = document.getElementById("hello");
+            function turnOn(){
+               light.src="image/pic_bulbon.png"
+            }
+            function turnOff(){
+               light.src="image/pic_bulboff.png"
+            }
+         </script>
+      </div>
+   </div>
+</body>
+</html>
